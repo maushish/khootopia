@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.19;
+pragma solidity >=0.7.0 <0.9.0;
 contract ChatApp{
     //User struct
     struct user{
@@ -18,7 +18,7 @@ contract ChatApp{
     }
     //fetch all users into the smart contract
     struct AlluserStruck{
-        string name:
+        string name;
         address accountAddress;
 
     }
@@ -109,7 +109,7 @@ contract ChatApp{
     }
 
     //Fetch all registered users to our dapp
-    function getAllAppUser() public view returns(AlluserStruck) memory {
+    function getAllAppUser() public view returns(AlluserStruck[] memory) {
         return getAllusers;
     }
 

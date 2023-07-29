@@ -1,19 +1,19 @@
-
 const hre = require("hardhat");
 
+async function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function main() {
-  
-  const lock = await hre.ethers.deployContract("Lock", [unlockTime], {
-    value: lockedAmount,
-  });
+  const ChatApp = await hre.ethers.deployContract("ChatApp");
+  await ChatApp.waitForDeployment();
+  console.log("Contract deployed to:", ChatApp.target);
 
-  await lock.waitForDeployment();
 
-  console.log(
-    `Lock with ${ethers.formatEther(
-      lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
-  );
+
+  await sleep(30 * 1000);
+
+
 }
 
 
