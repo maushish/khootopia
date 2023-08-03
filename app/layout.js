@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { ChatAppProvider } from '@/Context/ChatAppContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
